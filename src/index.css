@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 142 76% 45%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 142 76% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --glow-primary: 142 76% 45%;
+    --glow-intensity: 0.5;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 45% / 0.15) 0%, transparent 50%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%);
+    --gradient-border: linear-gradient(135deg, hsl(142 76% 45% / 0.5) 0%, hsl(142 76% 45% / 0.1) 100%);
+    
+    --shadow-glow: 0 0 60px hsl(142 76% 45% / 0.3);
+    --shadow-glow-sm: 0 0 20px hsl(142 76% 45% / 0.2);
+    --shadow-glow-lg: 0 0 100px hsl(142 76% 45% / 0.4);
+    
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .dark {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-300;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-sm {
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  .glow-lg {
+    box-shadow: var(--shadow-glow-lg);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px hsl(142 76% 45% / 0.5);
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--gradient-card)), var(--gradient-border);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .glass {
+    @apply backdrop-blur-xl bg-white/5;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 5%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 20%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(142 76% 45% / 0.5);
+}
