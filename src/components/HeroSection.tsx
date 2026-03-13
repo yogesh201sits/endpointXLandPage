@@ -105,19 +105,23 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-30"
           >
-            <Button variant="hero" size="xl" className="group">
-              <img
-                src={github}
-                alt="GitHub"
-                className="w-6 h-6"
-              />
-              GitHub
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="heroOutline" size="xl" className="group">
-              <Play className="w-5 h-5" />
-              View Live Demo
-            </Button>
+            <a href="https://github.com/yogesh201sits/endpointX">
+              <Button variant="hero" size="xl" className="group">
+                <img
+                  src={github}
+                  alt="GitHub"
+                  className="w-6 h-6"
+                />
+                GitHub
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a href="https://youtu.be/-tJd-HX6750?si=6FSQFkZfPssZBTQT">
+              <Button variant="heroOutline" size="xl" className="group">
+                <Play className="w-5 h-5" />
+                View Live Demo
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>
