@@ -48,16 +48,21 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white/90 hover:text-white"
-            >
-              View Demo
-            </Button>
+            <a href="https://github.com/yogesh201sits/endpointX">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white/90 hover:text-white"
+              >
+                View Demo
+              </Button>
+            </a>
+            <a href="https://youtu.be/-tJd-HX6750?si=6FSQFkZfPssZBTQT">
             <Button variant="hero" size="sm">
               Try EndpointX
             </Button>
+            </a>
+
           </div>
 
           {/* Mobile Menu Button */}
