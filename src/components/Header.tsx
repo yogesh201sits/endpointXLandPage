@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import github from "@/assets/github.svg";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,18 +50,23 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="https://github.com/yogesh201sits/endpointX">
+            <a href="https://youtu.be/-tJd-HX6750?si=6FSQFkZfPssZBTQT">
               <Button
                 variant="ghost"
                 size="sm"
                 className="text-white/90 hover:text-white"
               >
-                View Demo
+                Demo
               </Button>
             </a>
-            <a href="https://youtu.be/-tJd-HX6750?si=6FSQFkZfPssZBTQT">
+            <a href="https://github.com/yogesh201sits/endpointX">
             <Button variant="hero" size="sm">
-              Try EndpointX
+              <img
+                  src={github}
+                  alt="GitHub"
+                  className="w-6 h-6"
+                />
+              GitHub
             </Button>
             </a>
 
