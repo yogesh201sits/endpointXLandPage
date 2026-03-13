@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import logo from "@/assets/logo-transparent.png";
+import github from "@/assets/github.svg";
 
 const HeroSection = () => {
   return (
@@ -70,7 +71,7 @@ const HeroSection = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl mb-4 max-w-2xl mx-auto"
           >
             Generate, run, and test backend APIs in seconds.
           </motion.p>
@@ -79,7 +80,7 @@ const HeroSection = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-muted-foreground/80 mb-8"
+            className="text-lg  mb-8"
           >
             No setup. No boilerplate. No local environment.
           </motion.p>
@@ -105,7 +106,12 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-30"
           >
             <Button variant="hero" size="xl" className="group">
-              Try EndpointX
+              <img
+                src={github}
+                alt="GitHub"
+                className="w-6 h-6"
+              />
+              GitHub
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="heroOutline" size="xl" className="group">

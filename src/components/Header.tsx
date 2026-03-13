@@ -1,17 +1,36 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="fixed top-4 left-1/2 z-50 -translate-x-1/2">
-      <div className="rounded-full border border-white/10 backdrop-blur-xl bg-white/5 px-6 py-3 shadow-lg">
-        <nav className="flex items-center gap-10">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <img src={logo} alt="EndpointX" className="absolute w-[15vh] h-[15vh] -left-4 -top-5  " />
+    <header className="fixed top-4 left-1/2 z-50 -translate-x-1/2 w-[95%] max-w-6xl">
+      <div className="rounded-full border border-white/10 backdrop-blur-xl bg-white/5 px-4 sm:px-6 py-3 shadow-lg">
+        <nav className="flex items-center justify-between">
+          
+          {/* Logo (UNCHANGED) */}
+          <a href="#" className="relative flex items-center">
+  
+            <div className="absolute -left-6 -top-15">
+              <img
+                src={logo}
+                alt="EndpointX"
+                className="w-40 h-22 object-contain"
+              />
+            </div>
+
+          <div className="ml-24">
+            <h2 className="text-2xl font-semibold">
+              Endpoint<span className="text-green-500">X</span>
+            </h2>
+          </div>
+
           </a>
 
-          {/* Nav Links */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
             <a href="#problem" className="text-white/90 hover:text-white transition">
               Problem
@@ -27,12 +46,12 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Actions */}
-          <div className="flex items-center gap-3">
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center gap-3">
             <Button
               variant="ghost"
               size="sm"
-              className="text-white/90 hover:text-white hidden sm:inline-flex"
+              className="text-white/90 hover:text-white"
             >
               View Demo
             </Button>
@@ -40,7 +59,34 @@ const Header = () => {
               Try EndpointX
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="mt-4 flex flex-col gap-4 md:hidden text-center">
+            <a href="#problem" onClick={() => setIsOpen(false)}>Problem</a>
+            <a href="#solution" onClick={() => setIsOpen(false)}>Solution</a>
+            <a href="#features" onClick={() => setIsOpen(false)}>Features</a>
+            <a href="#security" onClick={() => setIsOpen(false)}>Security</a>
+
+            <div className="flex flex-col gap-3 pt-2">
+              <Button variant="ghost" size="sm">
+                View Demo
+              </Button>
+              <Button variant="hero" size="sm">
+                Try EndpointX
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
